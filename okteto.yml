@@ -1,20 +1,15 @@
 build:
-  demo:
+  portfolio:
     context: .
-    image: okteto.dev/demo:latest
 
 deploy:
-  - kubectl apply -f k8s.yaml
+  - cd k8s/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
 
 dev:
-  demo:
-    image: $OKTETO_BUILD_DEMO_IMAGE
+  portfolio:
+    image: $OKTETO_BUILD_PORTFOLIO_IMAGE
     command: bash
     sync:
       - src:/app
     forward:
       - 8000:8000
-    envFiles:
-      - config/django.env
-      - config/database.env
-      - config/digitalocean.env

@@ -161,3 +161,5 @@ AWS_S3_OBJECT_PARAMETERS = {
     "ACL": "public-read"
 }
 #############################
+
+CSRF_TRUSTED_ORIGINS=['https://*.cloud.okteto.net']

@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+- ingress.yaml
+configMapGenerator:
+- behavior: create
+  envs:
+  - config/django.env
+  - config/database.env
+  - config/objects.env
+  name: portfolio
+secretGenerator:
+- behavior: create
+  envs:
+  - secrets/django.env
+  - secrets/database.env
+  - secrets/objects.env
+  name: portfolio
+images:
+- digest: sha256:01edf9a27e8a262b143f694088003ae06e065cde5a68290cd66fefbe2d24fc3d
+  name: PORTFOLIO_IMAGE
+  newName: registry.cloud.okteto.net/hosamalmoghraby/porfolio-django-portfolio

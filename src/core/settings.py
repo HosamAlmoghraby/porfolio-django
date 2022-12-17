@@ -138,8 +138,8 @@ STATIC_URL = 'https://bfb4e8b6156cc1130ec648f587792dd4.r2.cloudflarestorage.com/
 # MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')
 
 ##### django-storages ######
-DEFAULT_FILE_STORAGE = os.environ.get("DJ_DEFAULT_FILE_STORAGE")
-STATICFILES_STORAGE = os.environ.get("DJ_STATICFILES_STORAGE")
+DEFAULT_FILE_STORAGE = os.environ.get("AWS_DEFAULT_FILE_STORAGE")
+STATICFILES_STORAGE = os.environ.get("AWS_STATICFILES_STORAGE")
 
 ########### CLOUDFLARE ##############
 # AWS_S3_ENDPOINT_URL = os.environ.get("AWS_S3_ENDPOINT_URL")

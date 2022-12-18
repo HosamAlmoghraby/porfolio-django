@@ -1,0 +1,10 @@
+<!-- Started Background -->
+{% if page.background.background_type == 'image' %}
+    <div class="slide" style="background-image: url({{ page.background.image.url }});"></div>
+{% elif page.background.background_type == 'particles' %}
+    <div id="particles-bg" class="slide" style="background-image: url({{ page.background.image.url }});"></div>
+{% elif page.background.background_type == 'color' %}
+    <div class="slide" style="background-color: {{ page.background.color }};"></div>
+{% elif page.background.background_type == 'video' %}
+    <div id="video-bg" class="slide" data-property="{videoURL:'{{ page.background.video_url }}', containment:'#video-bg', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, addRaster:true, quality:'default'}"></div>
+{% endif %}

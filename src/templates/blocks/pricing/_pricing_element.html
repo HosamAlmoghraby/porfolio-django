@@ -1,0 +1,7 @@
+                <div class="feature-list">
+                    <ul>
+                        {% for pricing_element in pricing_item.elements.all %}
+                            <li {% if pricing_element.excluded %}class="disable"{% endif %}>{{ pricing_element.title }} {% if pricing_element.new %}<strong>new</strong>{% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                </div>

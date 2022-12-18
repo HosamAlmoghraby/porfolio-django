@@ -1,0 +1,17 @@
+<div class="centrize full-width">
+    <div class="vertical-center">
+
+        <!-- Started titles -->
+        <div class="title">{{ page.title_name|safe }}</div>
+        <div class="subtitle">
+            {{ page.subtitle|safe }}
+            <div class="typing-title">
+                {% for typing_title in page.typing_title.all %}
+                    <p>{{ typing_title.typing_title|safe }}</p>
+                {% endfor %}
+            </div>
+            <span class="typed-title"></span>
+        </div>
+        
+    </div>
+</div>

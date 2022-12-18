@@ -1,0 +1,18 @@
+<!--
+    Fun Fact
+-->
+{% for fact_block in page.fact_blocks.all %}
+    <div class="content fuct">
+        <div class="row">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                <!-- title -->
+                <div class="title">{{ fact_block.title|safe }}</div>
+
+            </div>
+        </div>
+
+        {% include 'blocks/fact/_fact_item.html' %}
+
+    </div>
+{% endfor %}

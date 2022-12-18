@@ -1,0 +1,18 @@
+<!--
+    Clients
+-->
+{% for client_block in page.client_blocks.all %}
+    <div class="content clients">
+        <div class="row">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                <!-- title -->
+                <div class="title">{{ client_block.title|safe }}</div>
+
+            </div>
+        </div>
+
+        {% include 'blocks/client/_client_item.html' %}
+
+    </div>
+{% endfor %}

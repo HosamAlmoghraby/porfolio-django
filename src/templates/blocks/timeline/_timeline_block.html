@@ -1,0 +1,17 @@
+<!--
+    Resume
+-->
+<div class="content resume">
+    <div class="row">
+        {% for timeline_block in page.timeline_blocks.all %}
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+
+                <!-- title -->
+                <div class="title">{{ timeline_block.title|safe }}</div>
+
+                {% include 'blocks/timeline/_timeline_item.html' %}
+                
+            </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+
+		{% for page in pages %}
+			<!--
+				Card - Started
+			-->
+			{% if page.route == 'home-card' %}
+				<div class="card-inner card-started active" id="{{ page.route }}">
+
+					{% include 'blocks/home/_home_background.html' %}
+
+					{% include 'blocks/home/_home_titles.html' %}
+
+				</div>
+			{% else %}
+				<div class="card-inner" id="{{ page.route }}">
+					<div class="row card-container">
+
+						<!--
+							Card Wrap
+						-->
+						<div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-6" data-simplebar>
+							
+							{% include 'partials/_side.html' %}
+
+							{% include 'partials/_top.html' %}
+
+							{% include 'blocks/service/_service_block.html' %}
+
+							{% include 'blocks/pricing/_pricing_block.html' %}
+
+							{% include 'blocks/fact/_fact_block.html' %}
+
+							{% include 'blocks/client/_client_block.html' %}
+							
+							{% include 'blocks/timeline/_timeline_block.html' %}
+
+							{% include 'blocks/skill/_skill_block.html' %}
+
+						</div>
+						
+					</div>
+				</div>
+			{% endif %}
+		{% empty %}
+			<div class="text">
+				<p>
+					Please add pages
+				</P>
+			</div>
+		{% endfor %}
+
+		<!-- 
+			Lines Grid
+		-->
+		<div class="lines-grid">
+			<div class="row">
+				<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3"></div>
+				<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
+					<div class="lines">
+						<div class="line-1"></div>
+						<div class="line-2" style="animation-delay: 10s;"></div>
+					</div>
+				</div>
+				<div class="col col-m-12 col-t-6 col-d-4 col-d-lg-3">
+					<div class="lines">
+						<div class="line-1"></div>
+					</div>
+				</div>
+				<div class="col col-m-0 col-t-0 col-d-0 col-d-lg-3">
+					<div class="lines">
+						<div class="line-1"></div>
+						<div class="line-2" style="animation-delay: 0s;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock content %}

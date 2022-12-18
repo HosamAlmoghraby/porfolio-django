@@ -1,0 +1,36 @@
+<header class="header">
+
+    <!-- logo -->
+    <div class="logo">
+        <a href="{% url 'pages:index' %}"><span>{{ settings.logo }}</span></a>
+    </div>
+    
+    <!-- menu -->
+    <div class="top-menu">
+        <ul>
+            {% if pages %}
+                {% for page in pages %}
+                    <li>
+                        <a href="#{{ page.route }}">
+                            <span class="icon {{ page.icon.code }}"></span>
+                            <span class="link">{{ page.name }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Started socials -->
+    <div class="social">
+        {% for social in settings.social_on_header.all %}
+            <a target="_blank" href="{{ social.url }}"><span class="icon {{ social.icon.code }}"></span></a>
+        {% endfor %}
+    </div>
+
+    <!-- Mobile Menu -->
+    <span class="menu-btn">
+        <span class="m-line"></span>
+    </span>
+
+</header>

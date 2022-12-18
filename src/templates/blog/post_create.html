@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Post</h1>
+    <form action="{% url 'blog:post_create' %}" method="POST" class="form-group" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-dark" type="submit">Add</button>
+    </form>
+    <hr>
+    <a href="../">Back to Posts</a>
+{% endblock %}

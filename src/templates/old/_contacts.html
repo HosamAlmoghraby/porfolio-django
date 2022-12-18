@@ -1,0 +1,145 @@
+{% load static %}
+
+<div class="card-inner" id="{{ page.route }}">
+    <div class="row card-container">
+        
+        <!--
+            Card Wrap
+        -->
+        <div class="card-wrap col col-m-12 col-t-12 col-d-8 col-d-lg-6" data-simplebar>
+            
+            <!-- Map -->
+            <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6">
+                <div class="map" id="map"></div>
+            </div>
+                
+            <!--
+                Inner Top
+            -->
+            <div class="content inner-top">
+                <div class="row">
+                    <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+                        <div class="title-bg">Contacts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--
+                Contacts Info
+            -->
+            <div class="content contacts-info">
+                <div class="row">
+                    <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                        <!-- title -->
+                        <div class="title"><span>Get</span> in Touch</div>
+
+                    </div>
+                </div>
+
+                <!-- contacts items -->
+                <div class="row contacts-items">
+
+                    <!-- contacts item -->
+                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                        <div class="contacts-item card-box">
+                            <div class="icon"><i class="la la-map-marker"></i></div>
+                            <div class="name">Address</div>
+                            <p>
+                                France, Paris.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- contacts item -->
+                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                        <div class="contacts-item card-box">
+                            <div class="icon"><i class="la la-at"></i></div>
+                            <div class="name">Email</div>
+                            <p>
+                                adlard@example.com
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- contacts item -->
+                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                        <div class="contacts-item card-box">
+                            <div class="icon"><i class="la la-phone"></i></div>
+                            <div class="name">Phone</div>
+                            <p>
+                                +123 654 78900
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- contacts item -->
+                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                        <div class="contacts-item card-box">
+                            <div class="icon"><i class="la la-check-square"></i></div>
+                            <div class="name">Freelance</div>
+                            <p>
+                                Available
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--
+                Contacts Form
+            -->
+            <div class="content contacts-form">
+                <div class="row">
+                    <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                        <!-- title -->
+                        <div class="title"><span>Contact</span> Form</div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                        <!-- form -->
+                        <div class="contact_form card-box">
+                            <form id="cform" method="post">
+                                <div class="row">
+                                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                                        <div class="group-val">
+                                            <input type="text" name="name" placeholder="Full Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                                        <div class="group-val">
+                                            <input type="text" name="email" placeholder="Email Address" />
+                                        </div>
+                                    </div>
+                                    <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+                                        <div class="group-val">
+                                            <textarea name="message" placeholder="Your Message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="align-left">
+                                    <a href="#" class="button" onclick="$('#cform').submit(); return false;">
+                                        <span class="text">Send Message</span>
+                                        <span class="icon"><i class="la la-arrow-right"></i></span>
+                                    </a>
+                                </div>
+                            </form>
+                            <div class="alert-success">
+                                <p>Thanks, your message is sent successfully.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>

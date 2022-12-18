@@ -1,0 +1,18 @@
+<!--
+    Services
+-->
+{% for service_block in page.service_blocks.all %}
+    <div class="content services">
+        <div class="row">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                <!-- title -->
+                <div class="title">{{ service_block.title|safe }}</div>
+
+            </div>
+        </div>
+
+        {% include 'blocks/service/service_item.html' %}
+
+    </div>
+{% endfor %}

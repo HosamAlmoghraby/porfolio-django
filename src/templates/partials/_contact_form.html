@@ -1,0 +1,50 @@
+<!--
+    Contacts Form
+-->
+<div class="content contacts-form">
+    <div class="row">
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+            <!-- title -->
+            <div class="title"><span>Contact</span> Form</div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+            <!-- form -->
+            <div class="contact_form card-box">
+                <form id="cform" method="post">
+                    <div class="row">
+                        <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                            <div class="group-val">
+                                <input type="text" name="name" placeholder="Full Name" />
+                            </div>
+                        </div>
+                        <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                            <div class="group-val">
+                                <input type="text" name="email" placeholder="Email Address" />
+                            </div>
+                        </div>
+                        <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+                            <div class="group-val">
+                                <textarea name="message" placeholder="Your Message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="align-left">
+                        <a href="#" class="button" onclick="$('#cform').submit(); return false;">
+                            <span class="text">Send Message</span>
+                            <span class="icon"><i class="la la-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </form>
+                <div class="alert-success">
+                    <p>Thanks, your message is sent successfully.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+                <!-- resume items -->
+                <div class="resume-items card-box">
+
+                    <!-- resume item -->
+                    {% for timeline_item in timeline_block.timeline_items.all %}
+                        <div class="resume-item">
+                            <div class="name">{{ timeline_item.title|safe }}</div>
+                            <div class="date">{% if timeline_item.from_date %}{{ timeline_item.year_from|safe }} - {% if timeline_item.to_date %}{{ timeline_item.year_to|safe }}{% else %}Present{% endif %}{% endif %}{% if timeline_item.from_date and timeline_item.place %} <span>|</span> {% endif %}{% if timeline_item.place %}{{ timeline_item.place|safe }}{% endif %}</div>
+                            <p>
+                                {{ timeline_item.description|safe }}
+                            </p>
+                        </div>
+                    {% endfor %}
+
+                </div>

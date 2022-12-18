@@ -1,0 +1,8 @@
+<div class="circle-bts">
+    {% for downloader in page.downloader.all %}
+        <a target="_blank" href="{{ downloader.file.url }}"><span><i class="icon {{ downloader.icon.code }}"></i>{{ downloader.button_name }}</span></a>
+        {% for social in downloader.social_links.all %}
+            <a target="_blank" href="{{ social.url }}"><i class="icon {{ social.icon.code }}"></i></a>
+        {% endfor %}
+    {% endfor %}
+</div>

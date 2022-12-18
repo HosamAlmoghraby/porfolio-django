@@ -1,0 +1,13 @@
+                <!-- skills -->
+                <div class="skills-list card-box">
+                    <ul>
+                        {% for skill_item in skill_block.skill_items.all %}
+                            <li> 
+                                <div class="name">{{ skill_item.name|safe }}</div>
+                                <div class="progress">
+                                    <div class="percentage" style="width:{{ skill_item.percentage }}%;"></div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>

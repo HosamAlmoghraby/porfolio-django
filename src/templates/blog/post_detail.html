@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Post {{ object.id }}</h1>
+        <li>{{ object }}</li>
+    <hr>
+    {% if object.image %}
+    <img src="{{ object.image.url }}">
+    {% endif %}
+    <div>
+        <a href="../">Back to Posts</a>
+    </div>
+{% endblock %}

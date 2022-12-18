@@ -1,0 +1,33 @@
+    <!-- pricing items -->
+    <div class="row pricing-items">
+
+        <!-- pricing item -->
+        {% for pricing_item in pricing_block.pricing_items.all %}
+            <div class="col col-m-12 col-t-6 col-d-6 col-d-lg-6">
+                <div class="pricing-item card-box">
+                    <div class="icon"><i class="{{ pricing_item.icon.code }}"></i></div>
+                    <div class="name">{{ pricing_item.title|safe }}</div>
+                    {% if pricing_item.amount %}
+                        <div class="amount">
+                            <span class="dollar">{{ pricing_item.currency.symbol }}</span>
+                            <span class="number">{{ pricing_item.amount }}</span>
+                            {% if pricing_item.amount and pricing_item.unit %}
+                                <span class="period">/ {{ pricing_item.unit }}</span>
+                            {% else %}
+                                <span class="period">{{ pricing_item.unit }}</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% include 'blocks/pricing/_pricing_element.html' %}
+                    
+                    {% if pricing_item.button_name %}
+                        <div class="lnks">
+                            <a href="{{ pricing_item.button_url }}" class="lnk">{{ pricing_item.button_name|safe }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        
+    </div>

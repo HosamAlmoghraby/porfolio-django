@@ -1,0 +1,18 @@
+<!--
+    Price Tables
+-->
+{% for pricing_block in page.pricing_blocks.all %}
+    <div class="content pricing">
+        <div class="row">
+            <div class="col col-m-12 col-t-12 col-d-12 col-d-lg-12">
+
+                <!-- title -->
+                <div class="title">{{ pricing_block.title|safe }}</div>
+
+            </div>
+        </div>
+
+        {% include 'blocks/pricing/_pricing_item.html' %}
+
+    </div>
+{% endfor %}

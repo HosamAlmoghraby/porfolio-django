@@ -1,0 +1,10 @@
+{% if page.side == 'image' %}
+    <!-- Image -->
+    <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6" style="background-image: url({{ page.side_image.image.url }});"></div>
+
+{% elif page.side == 'map' %}
+    <!-- Map -->
+    <div class="card-image col col-m-12 col-t-12 col-d-4 col-d-lg-6">
+        <div class="map" id="map"></div>
+    </div>
+{% endif %}

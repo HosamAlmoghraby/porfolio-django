@@ -1,0 +1,21 @@
+        <!-- client items -->
+        <div class="row client-items">
+
+            <!-- client item -->
+            {% for client_item in client_block.client_items.all %}
+                <div class="col col-m-6 col-t-6 col-d-3 col-d-lg-3">
+                    <div class="client-item card-box">
+                        <div class="image">
+                            {% if client_item.url %}
+                                <a target="_blank" href="{{ client_item.url }}">
+                                    <img src="{{ client_item.image.url }}" alt="{{ client_item.alt }}" />
+                                </a>
+                            {% else %}
+                                <img src="{{ client_item.image.url }}" alt="{{ client_item.alt }}" />
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>

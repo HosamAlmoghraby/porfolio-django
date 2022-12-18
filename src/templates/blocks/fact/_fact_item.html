@@ -1,0 +1,14 @@
+        <!-- fuct items -->
+        <div class="row fuct-items">
+
+            <!-- fuct item -->
+            {% for fact_item in fact_block.fact_items.all %}
+                <div class="col col-m-6 col-t-6 col-d-3 col-d-lg-3">
+                    <div class="fuct-item card-box">
+                        <div class="icon"><i class="{{ fact_item.icon.code }}"></i></div>
+                        <div class="name">{{ fact_item.title|safe }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>        

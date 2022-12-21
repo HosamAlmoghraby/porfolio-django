@@ -32,6 +32,11 @@ ALLOWED_HOSTS = os.environ.get("DJ_ALLOWED_HOSTS").split()
 # Application definition
 
 INSTALLED_APPS = [
+    'base.apps.BaseConfig',
+    'pages.apps.PagesConfig',
+    'blocks.apps.BlocksConfig',
+    'blog.apps.BlogConfig',
+    
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -55,7 +60,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -129,10 +134,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 #################################################
-STATIC_URL = 'https://bfb4e8b6156cc1130ec648f587792dd4.r2.cloudflarestorage.com/demo/static/'
+# STATIC_URL = 'https://bfb4e8b6156cc1130ec648f587792dd4.r2.cloudflarestorage.com/demo/static/'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_root')
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')
@@ -161,5 +166,3 @@ AWS_S3_OBJECT_PARAMETERS = {
     "ACL": "public-read"
 }
 #############################
-
-CSRF_TRUSTED_ORIGINS=['https://*.cloud.okteto.net']

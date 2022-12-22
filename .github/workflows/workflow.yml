@@ -20,5 +20,5 @@ jobs:
       # - name: Build
       #   uses: okteto/build@latest
 
-      - name: Deploy Preview Environment
+      - name: "Deploy Preview Environment"
         uses: okteto/deploy-preview@latest

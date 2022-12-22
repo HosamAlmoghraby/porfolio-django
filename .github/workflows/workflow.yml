@@ -1,0 +1,16 @@
+on: [push]
+
+name: example
+
+jobs:
+
+  devflow:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: "Build"
+      uses: okteto/build@latest

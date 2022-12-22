@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: okteto/context@latest
+      - name: Context
+        uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
+          url: ${{ secrets.OKTETO_URL }}
       
-      - name: "Build"
-        uses: okteto/build@latest
+      # - name: Build
+      #   uses: okteto/build@latest
 
-      - name: "Deploy Preview Environment"
+      - name: Deploy Preview Environment
         uses: okteto/deploy-preview@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

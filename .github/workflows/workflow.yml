@@ -1,16 +1,24 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
-name: example
+name: CI/CD Development
 
 jobs:
 
-  devflow:
+  preview:
     runs-on: ubuntu-latest
+    
     steps:
-    
-    - uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-    
-    - name: "Build"
-      uses: okteto/build@latest
+      - uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+      
+      - name: "Build"
+        uses: okteto/build@latest
+
+      - name: "Deploy Preview Environment"
+        uses: okteto/deploy-preview@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

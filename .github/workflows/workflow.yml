@@ -17,8 +17,8 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
       
-      # - name: Build
-      #   uses: okteto/build@latest
+      - name: Build
+        uses: okteto/build@latest
 
       - name: Deploy Preview Environment
         uses: okteto/deploy-preview@latest

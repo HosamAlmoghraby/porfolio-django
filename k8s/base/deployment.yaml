@@ -29,14 +29,14 @@ spec:
           #     name: portfolio
         env:
         - name: DJ_SECRET_KEY
-          value: "${{ DJ_SECRET_KEY }}"
+          value: ${{ DJ_SECRET_KEY }}
         - name: DB_NAME
-          value: "${{ DB_NAME }}"
+          value: ${{ DB_NAME }}
         - name: DB_USERNAME
-          value: "${{ DB_USERNAME }}"
+          value: ${{ DB_USERNAME }}
         - name: DB_PASSWORD
-          value: "${{ DB_PASSWORD }}"
+          value: ${{ DB_PASSWORD }}
         - name: AWS_ACCESS_KEY_ID
-          value: "${{ AWS_ACCESS_KEY_ID }}"
+          value: ${{ AWS_ACCESS_KEY_ID }}
         - name: AWS_SECRET_ACCESS_KEY
-          value: "${{ AWS_SECRET_ACCESS_KEY }}"
+          value: ${{ AWS_SECRET_ACCESS_KEY }}

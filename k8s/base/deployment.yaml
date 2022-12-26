@@ -25,5 +25,6 @@ spec:
         envFrom:
           - configMapRef:
               name: portfolio
-          - secretRef:
-              name: portfolio
+        env:
+        - name: porto
+          value: $PORTO

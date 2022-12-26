@@ -10,6 +10,11 @@ configMapGenerator:
   - config/database.env
   - config/objects.env
   name: portfolio
+secretGenerator:
+- behavior: create
+  envs:
+  - test.env
+  name: portfolio
 # secretGenerator:
 # - behavior: create
 #   envs:

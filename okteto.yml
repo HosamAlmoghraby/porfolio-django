@@ -3,7 +3,7 @@ build:
     context: .
 
 deploy:
-  - envsubst < <(cat k8s/overlays/dev/secrets.env/*) > k8s/overlays/dev/secrets/secrets.env
+  - envsubst < <(cat k8s/overlays/dev/secrets.env/*) > k8s/overlays/dev/secrets
   - cd k8s/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
 
 dev:

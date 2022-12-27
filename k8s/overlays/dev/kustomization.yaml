@@ -13,7 +13,7 @@ configMapGenerator:
 secretGenerator:
 - behavior: create
   envs:
-  - secrets/secrets.env
+  - secrets
   name: portfolio
 images:
 - digest: sha256:a9024a7ab62d3e02653349306cbc36881bd3a94b3dfc77dbd7ba11b6046b6289

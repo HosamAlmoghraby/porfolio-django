@@ -3,7 +3,10 @@ build:
     context: .
 
 deploy:
-  - cd k8s/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
+  - env
+  - cd k8s/overlays/dev
+  - kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE}
+  - kubectl apply -k .
 
 dev:
   portfolio:

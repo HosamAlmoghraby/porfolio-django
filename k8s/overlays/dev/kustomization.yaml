@@ -10,18 +10,11 @@ configMapGenerator:
   - config/database.env
   - config/objects.env
   name: portfolio
-# secretGenerator:
-# - behavior: create
-#   envs:
-#   - test.env
-#   name: portfolio
-# secretGenerator:
-# - behavior: create
-#   envs:
-#   - secrets/django.env
-#   - secrets/database.env
-#   - secrets/objects.env
-#   name: portfolio
+secretGenerator:
+- behavior: create
+  envs:
+  - secrets/secrets.env
+  name: portfolio
 images:
 - digest: sha256:a9024a7ab62d3e02653349306cbc36881bd3a94b3dfc77dbd7ba11b6046b6289
   name: PORTFOLIO_IMAGE

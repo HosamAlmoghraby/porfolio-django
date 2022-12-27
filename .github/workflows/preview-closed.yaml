@@ -3,6 +3,8 @@ on:
     types:
       - closed
 
+name: Destroy Preview Environment
+
 jobs:
   closed:
     runs-on: ubuntu-latest

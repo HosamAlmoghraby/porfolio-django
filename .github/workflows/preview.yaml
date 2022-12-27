@@ -2,7 +2,6 @@ on:
   pull_request:
     branches:
       - preview
-      - main
 
 name: Deploy Preview Environment
 

@@ -20,5 +20,8 @@
 				"ms-kubernetes-tools.vscode-kubernetes-tools"
 			]
 		}
-	}
+	},
+	"runArgs": [
+		"--env-file", ".devcontainer/devcontainer.env"
+	]
 }

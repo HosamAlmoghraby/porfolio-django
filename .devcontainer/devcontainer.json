@@ -11,7 +11,7 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh",
+	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh && okteto kubeconfig",
 
 	// Configure tool-specific properties.
 	"customizations": {

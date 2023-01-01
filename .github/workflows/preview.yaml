@@ -21,5 +21,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: pr-${{ github.event.number }}-hosamalmoghraby
-        scope: personal
+        scope: global
         timeout: 15m

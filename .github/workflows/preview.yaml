@@ -19,7 +19,6 @@ jobs:
       uses: okteto/deploy-preview@latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # with:
-      #   name: pr-${{ github.event.number }}-hosamalmoghraby
-      #   scope: personal
-      #   timeout: 15m
+      with:
+        name: pr-${{ github.event.number }}-hosamalmoghraby
+        scope: personal

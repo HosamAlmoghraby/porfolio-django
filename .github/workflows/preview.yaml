@@ -1,7 +1,10 @@
 on: 
+  push:
+    branches:
+    - preview
   pull_request:
     branches:
-    - main
+    - preview
 
 name: Deploy Preview Environment
 

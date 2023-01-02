@@ -1,7 +1,10 @@
 on: 
-  pull_request:
+  push:
     branches:
-      - preview
+    - preview
+  # pull_request:
+  #   branches:
+  #   - preview
 
 name: Deploy Preview Environment
 
@@ -22,4 +25,3 @@ jobs:
       with:
         name: pr-${{ github.event.number }}-hosamalmoghraby
         scope: personal
-        timeout: 15m

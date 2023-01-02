@@ -10,9 +10,6 @@
 		}
 	},
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh && okteto kubeconfig",
-
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
@@ -21,6 +18,10 @@
 			]
 		}
 	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh && okteto kubeconfig",
+
 	"runArgs": [
 		"--env-file", ".devcontainer/devcontainer.env",
 		"--env-file", ".devcontainer/app-secrets.env"

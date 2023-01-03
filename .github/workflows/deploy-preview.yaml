@@ -18,7 +18,7 @@ jobs:
       - id: github_username
         uses: ASzc/change-string-case-action@v5
         with:
-          gh_username: ${{ github.actor }}
+          string: ${{ github.actor }}
 
       - name: Deploy preview environment
         uses: okteto/deploy-preview@latest

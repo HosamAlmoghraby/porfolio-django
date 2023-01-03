@@ -34,6 +34,6 @@ jobs:
       uses: okteto/pipeline@latest
       # env:
       #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # with:
-      #   name: development-hosamalmoghraby
-      #   scope: personal
+      with:
+        name: development-hosamalmoghraby
+        scope: personal

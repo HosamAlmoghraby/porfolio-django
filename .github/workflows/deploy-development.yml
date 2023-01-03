@@ -2,11 +2,11 @@ on:
   push:
     branches:
       - development
-  pull_request:
-    branches:
-      - development
-    types:
-      - closed
+  # pull_request:
+  #   branches:
+  #     - development
+  #   types:
+  #     - closed
 
 name: Deploy Development Environment
 

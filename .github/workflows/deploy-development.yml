@@ -14,16 +14,16 @@ jobs:
   deploy_development:
     runs-on: ubuntu-latest
     steps:
-      - name: Context
-        uses: okteto/context@latest
-        with:
-          token: ${{ secrets.OKTETO_TOKEN }}
-          url: ${{ secrets.OKTETO_URL }}
+      # - name: Context
+      #   uses: okteto/context@latest
+      #   with:
+      #     token: ${{ secrets.OKTETO_TOKEN }}
+      #     url: ${{ secrets.OKTETO_URL }}
 
       - name: Activate namespace
         uses: okteto/create-namespace@latest
         with:
-          namespace: development
+          namespace: development-hosamalmoghraby
 
       # - name: Deploy development environment
       #   uses: okteto/pipeline@latest

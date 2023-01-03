@@ -20,5 +20,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: pr-${{ github.event.number }}-${{ github.actor }}.toLowerCase()
+          name: pr-${{ github.event.number }}-${{ '${{ github.actor }}'.toLowerCase() }}
           scope: personal

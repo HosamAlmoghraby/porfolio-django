@@ -27,6 +27,6 @@ jobs:
 
       - name: Deploy development environment
         uses: okteto/pipeline@latest
-      #   with:
-      #     name: development-hosamalmoghraby
-      #     scope: personal
+        with:
+          name: development-hosamalmoghraby
+          scope: personal

@@ -13,7 +13,12 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
 
+      - id: gh_username
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ github.actor }}
+
       - name: Destroy development namespace
         uses: okteto/delete-namespace@latest
         with:
-          namespace: development-hosamalmoghraby
+          namespace: development-${{ steps.gh_username.outputs.lowercase }}

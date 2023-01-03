@@ -21,7 +21,7 @@ jobs:
           url: ${{ secrets.OKTETO_URL }}
 
       - name: Activate namespace
-        uses: okteto/createnamespace@latest
+        uses: okteto/create-namespace@latest
         with:
           namespace: development
 

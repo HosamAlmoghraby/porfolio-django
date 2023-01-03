@@ -21,7 +21,16 @@ jobs:
         token: ${{ secrets.OKTETO_TOKEN }}
         url: ${{ secrets.OKTETO_URL }}
 
-    - name: Deploy Development environment
+    - uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: Activate namespace
+      uses: okteto/namespace@latest
+      with:
+        namespace: development-hosamalmoghraby
+
+    - name: Deploy development environment
       uses: okteto/deploy-preview@latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

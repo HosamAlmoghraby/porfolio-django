@@ -1,21 +1,21 @@
 on:
   pull_request:
     types:
-    - closed
+      - closed
 
 name: Destroy Preview Environment
 
 jobs:
-  closed:
+  destroy_preview:
     runs-on: ubuntu-latest
     steps:
-    - name: Context
-      uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-        url: ${{ secrets.OKTETO_URL }}
+      - name: Context
+        uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+          url: ${{ secrets.OKTETO_URL }}
 
-    - name: Destroy preview environment
-      uses: okteto/destroy-preview@latest
-      with:
-        name: pr-${{ github.event.number }}-hosamalmoghraby
+      - name: Destroy preview environment
+        uses: okteto/destroy-preview@latest
+        with:
+          name: pr-${{ github.event.number }}-hosamalmoghraby

@@ -1,39 +1,32 @@
 on:
   push:
     branches:
-    - development
+      - development
   pull_request:
     branches:
-    - development
+      - development
     types:
-    - closed
+      - closed
 
 name: Deploy Development Environment
 
 jobs:
-  preview:
-    # if: github.event.pull_request.merged == true
+  deploy_development:
     runs-on: ubuntu-latest
     steps:
-    - name: Context
-      uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-        url: ${{ secrets.OKTETO_URL }}
+      - name: Context
+        uses: okteto/context@latest
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+          url: ${{ secrets.OKTETO_URL }}
 
-    - uses: okteto/context@latest
-      with:
-        token: ${{ secrets.OKTETO_TOKEN }}
-    
-    - name: Activate namespace
-      uses: okteto/namespace@latest
-      with:
-        namespace: development-hosamalmoghraby
+      - name: Activate namespace
+        uses: okteto/namespace@latest
+        with:
+          namespace: development-hosamalmoghraby
 
-    - name: Deploy development environment
-      uses: okteto/pipeline@latest
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        name: development-hosamalmoghraby
-        scope: personal
+      # - name: Deploy development environment
+      #   uses: okteto/pipeline@latest
+      #   with:
+      #     name: development-hosamalmoghraby
+      #     scope: personal

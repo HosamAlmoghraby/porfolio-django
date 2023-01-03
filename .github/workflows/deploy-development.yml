@@ -25,15 +25,15 @@ jobs:
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
     
-    - name: Activate namespace
-      uses: okteto/namespace@latest
-      with:
-        namespace: development-hosamalmoghraby
+    # - name: Activate namespace
+    #   uses: okteto/namespace@latest
+    #   with:
+    #     namespace: development-hosamalmoghraby
 
     - name: Deploy development environment
-      uses: okteto/deploy-preview@latest
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        name: development-hosamalmoghraby
-        scope: personal
+      uses: okteto/pipeline@latest
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # with:
+      #   name: development-hosamalmoghraby
+      #   scope: personal

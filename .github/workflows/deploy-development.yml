@@ -21,9 +21,9 @@ jobs:
           url: ${{ secrets.OKTETO_URL }}
 
       - name: Activate namespace
-        uses: okteto/namespace@latest
+        uses: okteto/createnamespace@latest
         with:
-          namespace: development-hosamalmoghraby
+          namespace: development
 
       # - name: Deploy development environment
       #   uses: okteto/pipeline@latest

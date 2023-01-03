@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+    - development
+  pull_request:
+    branches:
+    - development
+    types:
+    - closed
+
+name: Deploy Development Environment
+
+jobs:
+  preview:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - name: Context
+      uses: okteto/context@latest
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+        url: ${{ secrets.OKTETO_URL }}
+
+    - name: Deploy Development environment
+      uses: okteto/deploy-preview@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: development-hosamalmoghraby
+        scope: personal

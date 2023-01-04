@@ -15,21 +15,10 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
 
-      - name: deploy
-        run: |
-          ls -lah
-          # envsubst < k8s/overlays/dev/app.secrets > k8s/overlays/dev/secrets.env \
-          # cd k8s/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
-
-      # - id: gh_username
-      #   uses: ASzc/change-string-case-action@v5
-      #   with:
-      #     string: ${{ github.actor }}
-
-      # - name: Deploy preview environment
-      #   uses: okteto/deploy-preview@latest
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     name: pr-${{ github.event.number }}-${{ steps.gh_username.outputs.lowercase }}
-      #     scope: personal
+      - name: Deploy preview environment
+        uses: okteto/deploy-preview@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: pr-${{ github.event.number }}-${{ secrets.OKTETO_USERNAME }}
+          scope: personal

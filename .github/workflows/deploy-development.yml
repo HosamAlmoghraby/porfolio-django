@@ -23,5 +23,5 @@ jobs:
       - name: Deploy development environment
         uses: okteto/pipeline@latest
         with:
-          name: development-${{ secrets.OKTETO_USERNAME }}
+          name: pr-${{ github.event.number }}
           scope: personal

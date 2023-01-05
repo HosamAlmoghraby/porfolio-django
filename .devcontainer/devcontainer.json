@@ -11,17 +11,11 @@
 	},
 
 	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"ms-kubernetes-tools.vscode-kubernetes-tools",
-				"okteto.kubernetes-context"
-			]
-		}
-	},
+	// "customizations": {}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh && okteto kubeconfig",
+	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh",
+	"postStartCommand": "okteto context && okteto namespace use development-hosamalmoghraby && okteto kubeconfig",
 
 	"runArgs": [
 		"--env-file", ".devcontainer/devcontainer.env",

@@ -23,5 +23,5 @@ jobs:
       - name: Deploy development environment
         uses: okteto/pipeline@latest
         with:
-          name: pr-${{ github.event.number }}
+          name: portfolio
           scope: personal

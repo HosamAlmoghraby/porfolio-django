@@ -6,7 +6,7 @@ resources:
 configMapGenerator:
 - behavior: create
   envs:
-  - app.config
+  - config.env
   name: portfolio
 secretGenerator:
 - behavior: create

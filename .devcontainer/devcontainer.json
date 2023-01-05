@@ -24,6 +24,7 @@
 
 	"runArgs": [
 		"--env-file", ".devcontainer/devcontainer.env",
+		"--env-file", ".devcontainer/app-config.env",
 		"--env-file", ".devcontainer/app-secrets.env"
 	]
 }

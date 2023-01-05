@@ -15,12 +15,7 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
 
-      - id: gh_username
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{ github.actor }}
-
       - name: Destroy preview environment
         uses: okteto/destroy-preview@latest
         with:
-          name: pr-${{ github.event.number }}-${{ steps.gh_username.outputs.lowercase }}
+          name: pr-${{ github.event.number }}-${{ secrets.OKTETO_USERNAME }}

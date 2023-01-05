@@ -26,4 +26,3 @@ jobs:
         with:
           name: portfolio
           variables: "DB_USERNAME=${{ secrets.DB_USERNAME }}"
-

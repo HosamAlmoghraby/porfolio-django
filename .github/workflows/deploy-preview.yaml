@@ -8,6 +8,7 @@ name: Deploy Preview Environment
 jobs:
   deploy_preview:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - name: Context
         uses: okteto/context@latest

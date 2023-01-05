@@ -8,6 +8,7 @@ name: Deploy Development Environment
 jobs:
   deploy_development:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - name: Context
         uses: okteto/context@latest

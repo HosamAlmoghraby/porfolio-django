@@ -23,5 +23,5 @@ jobs:
       - name: Deploy development environment
         uses: okteto/pipeline@latest
         with:
-          name: portfolio
+          name: ssss
           scope: personal

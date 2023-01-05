@@ -24,4 +24,4 @@ jobs:
         uses: okteto/pipeline@latest
         with:
           name: portfolio
-          variables: "DB_USERNAME=${{ secrets.DB_USERNAME }}"
+          variables: "DB_USERNAME=${DB_USERNAME}"

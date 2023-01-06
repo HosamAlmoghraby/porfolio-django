@@ -14,6 +14,6 @@ secretGenerator:
   - secrets.env
   name: portfolio
 images:
-- digest: sha256:d6d8ce56c39bedb0656724f0fdf3cd072db2ea5888d1123679d1472a63c62a1c
+- digest: sha256:0a061db17b3e92fbcbc6587396325402939b12c0cdef873257b44d534f94c2d0
   name: PORTFOLIO_IMAGE
-  newName: registry.cloud.okteto.net/test-hosamalmoghraby/porfolio-django-portfolio
+  newName: registry.cloud.okteto.net/hosamalmoghraby/porfolio-django-portfolio

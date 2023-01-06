@@ -15,11 +15,12 @@ jobs:
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
-
-      - name: Development namespace
-        uses: okteto/create-namespace@latest
-        with:
           namespace: development-${{ secrets.OKTETO_USERNAME }}
+
+      # - name: Development namespace
+      #   uses: okteto/create-namespace@latest
+      #   with:
+      #     namespace: development-${{ secrets.OKTETO_USERNAME }}
 
       - name: Deploy development environment
         uses: okteto/pipeline@latest
@@ -33,7 +34,3 @@ jobs:
             DJ_USE_I18N=${{ secrets.DJ_USE_I18N }},
             DJ_USE_TZ=${{ secrets.DJ_USE_TZ }}
             "
-
-
-      - name: Deploy development environment
-        run: ls -lah && env

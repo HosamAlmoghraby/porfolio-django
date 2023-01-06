@@ -16,16 +16,15 @@ jobs:
           token: ${{ secrets.OKTETO_TOKEN }}
           url: ${{ secrets.OKTETO_URL }}
 
-      # - name: Development namespace
-      #   uses: okteto/create-namespace@latest
-      #   with:
-      #     namespace: development-${{ secrets.OKTETO_USERNAME }}
+      - name: Development namespace
+        uses: okteto/create-namespace@latest
+        with:
+          namespace: portfolio-${{ secrets.OKTETO_USERNAME }}
 
       - name: Deploy development environment
         uses: okteto/pipeline@latest
         with:
           name: portfolio
-          namespace: development-${{ secrets.OKTETO_USERNAME }}
           variables: "
             DJ_DEBUG_MODE=${{ secrets.DJ_DEBUG_MODE }},
             DJ_ALLOWED_HOSTS=${{ secrets.DJ_ALLOWED_HOSTS }},

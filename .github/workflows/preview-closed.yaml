@@ -8,6 +8,7 @@ name: Destroy Preview Environment
 jobs:
   destroy_preview:
     runs-on: ubuntu-latest
+    environment: preview
     steps:
       - name: Context
         uses: okteto/context@latest

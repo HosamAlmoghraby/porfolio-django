@@ -25,4 +25,12 @@ jobs:
         uses: okteto/pipeline@latest
         with:
           name: portfolio
-          variables: "DB_USERNAME=${{ secrets.DB_USERNAME }}"
+          variables: "
+            DB_USERNAME=${{ secrets.DB_USERNAME }},
+            DJ_DEBUG_MODE=${{ secrets.DJ_DEBUG_MODE }},
+            DJ_ALLOWED_HOSTS=${{ secrets.DJ_ALLOWED_HOSTS }},
+            DJ_LANGUAGE_CODE=${{ secrets.DJ_LANGUAGE_CODE }},
+            DJ_TIME_ZONE=${{ secrets.DJ_TIME_ZONE }},
+            DJ_USE_I18N=${{ secrets.DJ_USE_I18N }},
+            DJ_USE_TZ=${{ secrets.DJ_USE_TZ }}
+            "

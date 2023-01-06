@@ -26,7 +26,6 @@ jobs:
         with:
           name: portfolio
           variables: "
-            DB_USERNAME=${{ secrets.DB_USERNAME }},
             DJ_DEBUG_MODE=${{ secrets.DJ_DEBUG_MODE }},
             DJ_ALLOWED_HOSTS=${{ secrets.DJ_ALLOWED_HOSTS }},
             DJ_LANGUAGE_CODE=${{ secrets.DJ_LANGUAGE_CODE }},

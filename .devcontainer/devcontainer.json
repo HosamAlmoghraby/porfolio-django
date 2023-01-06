@@ -15,7 +15,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "curl https://get.okteto.com -sSfL | sh",
-	"postStartCommand": "okteto context --namespace development-hosamalmoghraby && okteto kubeconfig",
+	"postStartCommand": "okteto context && okteto kubeconfig",
 
 	"runArgs": [
 		"--env-file", ".devcontainer/devcontainer.env",

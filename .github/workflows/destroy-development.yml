@@ -16,4 +16,4 @@ jobs:
       - name: Destroy development namespace
         uses: okteto/delete-namespace@latest
         with:
-          namespace: development-${{ secrets.OKTETO_USERNAME }}
+          namespace: ${{ secrets.OKTETO_USERNAME }}

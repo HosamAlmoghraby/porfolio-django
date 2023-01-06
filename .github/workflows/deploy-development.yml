@@ -28,3 +28,4 @@ jobs:
             DJ_USE_I18N=${{ secrets.DJ_USE_I18N }},
             DJ_USE_TZ=${{ secrets.DJ_USE_TZ }}
             "
+

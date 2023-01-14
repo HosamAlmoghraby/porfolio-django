@@ -4,3 +4,10 @@ psycopg2~=2.9.0
 boto3~=1.26.0
 django-storages~=1.13.0
 pillow~=9.3.0
+
+# Django~=4.0
+# gunicorn~=20.0
+# psycopg2~=2.0
+# boto3~=1.0
+# django-storages~=1.0
+# pillow~=9.0

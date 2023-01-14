@@ -32,10 +32,10 @@ ALLOWED_HOSTS = os.environ.get("DJ_ALLOWED_HOSTS").split()
 # Application definition
 
 INSTALLED_APPS = [
-    'base.apps.BaseConfig',
-    'pages.apps.PagesConfig',
-    'blocks.apps.BlocksConfig',
-    'blog.apps.BlogConfig',
+    "base.apps.BaseConfig",
+    "pages.apps.PagesConfig",
+    "blocks.apps.BlocksConfig",
+    "blog.apps.BlogConfig",
     
     "django.contrib.admin",
     "django.contrib.auth",
@@ -132,6 +132,7 @@ USE_TZ = os.environ.get("DJ_USE_TZ") == "True"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# CSRF_TRUSTED_ORIGINS = ["https://*.cloud.okteto.net"]
 
 #################################################
 # STATIC_URL = 'https://bfb4e8b6156cc1130ec648f587792dd4.r2.cloudflarestorage.com/demo/static/'

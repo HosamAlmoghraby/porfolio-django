@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portfolio
+  labels:
+    {{- include "movies.labels" . | nindent 4 }}
+  annotations:
+    dev.okteto.com/generate-host: portfolio
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: portfolio
+                port:
+                  name: http

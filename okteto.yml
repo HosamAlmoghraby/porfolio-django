@@ -9,7 +9,7 @@ deploy:
   # - name: Deploy with Helm
   #   command: helm upgrade --install portfolio chart --set image=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image=${OKTETO_BUILD_PORTFOLIO_SHA}
   - name: Deploy with Helm
-    command: helm upgrade --install portfolio helm --set image.repository=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image.tag=${OKTETO_BUILD_PORTFOLIO_SHA}
+    command: helm upgrade --install portfolio helm --set image.registry=${OKTETO_BUILD_PORTFOLIO_REGISTRY} --set image.repository=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image.tag=${OKTETO_BUILD_PORTFOLIO_SHA}
 dev:
   portfolio:
     image: $OKTETO_BUILD_PORTFOLIO_IMAGE

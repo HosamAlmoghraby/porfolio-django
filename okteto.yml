@@ -3,13 +3,11 @@ build:
     context: .
 
 deploy:
-  # - envsubst < k8s/overlays/dev/config.template > k8s/overlays/dev/config.env
-  # - envsubst < k8s/overlays/dev/secrets.template > k8s/overlays/dev/secrets.env
-  # - cd k8s/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
-  # - name: Deploy with Helm
-  #   command: helm upgrade --install portfolio chart --set image=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image=${OKTETO_BUILD_PORTFOLIO_SHA}
+  # - envsubst < k8s/kustomize/overlays/dev/secrets.injector > k8s/kustomize/overlays/dev/secrets.env
+  # - cd k8s/kustomize/overlays/dev && kustomize edit set image PORTFOLIO_IMAGE=${OKTETO_BUILD_PORTFOLIO_IMAGE} && kubectl apply -k .
   - name: Deploy with Helm
-    command: helm upgrade --install portfolio helm --set image.registry=${OKTETO_BUILD_PORTFOLIO_REGISTRY} --set image.repository=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image.tag=${OKTETO_BUILD_PORTFOLIO_SHA}
+    command: helm upgrade --install hosam k8s/helm --values k8s/helm/values-dev.yaml --set image.repository=${OKTETO_BUILD_PORTFOLIO_REPOSITORY} --set image.tag=${OKTETO_BUILD_PORTFOLIO_SHA}
+
 dev:
   portfolio:
     image: $OKTETO_BUILD_PORTFOLIO_IMAGE

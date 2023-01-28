@@ -1,0 +1,41 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+- ingress.yaml
+    ########## DJANGO ##########
+    ########## DATABASE ##########
+    ########## OBJECTS - DIGITALOCEAN ##########
+configMapGenerator:
+- behavior: create
+  literals:
+  - DJ_DEBUG_MODE=True
+  - DJ_ALLOWED_HOSTS=localhost 127.0.0.1 .cloud.okteto.net
+  - DJ_LANGUAGE_CODE=en-us
+  - DJ_TIME_ZONE=UTC
+  - DJ_USE_I18N=True
+  - DJ_USE_TZ=True
+  - DB_ENGINE=django.db.backends.postgresql
+  - DB_HOST=manny.db.elephantsql.com
+  - DB_NAME=wysibutn
+  - DB_PORT=5432
+  - AWS_DEFAULT_FILE_STORAGE=storages.backends.s3boto3.S3Boto3Storage
+  - AWS_STATICFILES_STORAGE=storages.backends.s3boto3.S3StaticStorage
+  - AWS_STORAGE_BUCKET_NAME=portfolio-dev
+  - AWS_S3_REGION_NAME=fra1
+  - AWS_S3_ENDPOINT_URL=https://fra1.digitaloceanspaces.com
+  name: portfolio
+  ############ OBJECTS - CLOUDFLARE #############
+  # - AWS_DEFAULT_FILE_STORAGE=storages.backends.s3boto3.S3Boto3Storage
+  # - AWS_STATICFILES_STORAGE=storages.backends.s3boto3.S3StaticStorage
+  # - AWS_S3_ENDPOINT_URL=https://fra1.digitaloceanspaces.com
+  # - AWS_STORAGE_BUCKET_NAME=portfolio-dev
+secretGenerator:
+- behavior: create
+  envs:
+  - secrets.env
+  name: portfolio
+images:
+- digest: sha256:28aabec4d0973df45c752cb11ec9b5bca4da42eede652c474b5d4eb5c4d3d4b7
+  name: PORTFOLIO_IMAGE
+  newName: registry.cloud.okteto.net/hosamalmoghraby/porfolio-django-portfolio

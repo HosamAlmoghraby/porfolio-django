@@ -14,17 +14,16 @@ jobs:
         uses: okteto/context@latest
         with:
           token: ${{ secrets.OKTETO_TOKEN }}
-          url: ${{ secrets.OKTETO_URL }}
+          url: ${{ vars.OKTETO_URL }}
 
       - name: Deploy development environment
         uses: okteto/pipeline@latest
         with:
           name: portfolio
           variables: "
-            DJ_DEBUG_MODE=${{ secrets.DJ_DEBUG_MODE }},
-            DJ_ALLOWED_HOSTS=${{ secrets.DJ_ALLOWED_HOSTS }},
-            DJ_LANGUAGE_CODE=${{ secrets.DJ_LANGUAGE_CODE }},
-            DJ_TIME_ZONE=${{ secrets.DJ_TIME_ZONE }},
-            DJ_USE_I18N=${{ secrets.DJ_USE_I18N }},
-            DJ_USE_TZ=${{ secrets.DJ_USE_TZ }}
+            DJ_SECRET_KEY=${{ secrets.DJ_SECRET_KEY }},
+            DB_USERNAME=${{ secrets.DB_USERNAME }},
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }},
+            AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }},
+            AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
             "
